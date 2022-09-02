@@ -11,6 +11,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatInputModule} from '@angular/material/input'; 
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import { SnackbarService } from '../services/snackbar.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {MatInputModule} from '@angular/material/input';
     CommonModule, LoginRoutingModule, 
     FormsModule, ReactiveFormsModule,
     MatCardModule, MatDividerModule,MatProgressBarModule,
-    MatButtonModule, MatInputModule
-  ]
+    MatButtonModule, MatInputModule, MatSnackBarModule
+  ],
+  providers: [SnackbarService]
 })
 export class LoginModule { }

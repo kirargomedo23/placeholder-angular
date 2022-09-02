@@ -1,0 +1,6 @@
+
+@import '../../../styles.scss';
+
+.p-x{
+    @include padding-x(3);
+}

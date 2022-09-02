@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SnackbarService } from '../services/snackbar.service';
+import { ERRORSNACKBAR, SUCCESSNACKBAR } from '../shared/constantes/snackbar';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +16,9 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup = this.formBuilder.group({});
 
   constructor(
-    private formBuilder: FormBuilder
+    private readonly formBuilder: FormBuilder,
+    private readonly router: Router,
+    private readonly snackBarService: SnackbarService
   ) { 
     
   }
@@ -31,7 +36,8 @@ export class LoginComponent implements OnInit {
 
   public login(){
     if(this.loginForm.invalid) {
-      console.log('error invalid! ')
+      this.snackBarService.openSnackBar('Formulario inválido!','Error', 
+      ERRORSNACKBAR, 'bottom', 'center');
       return;
     }
 
@@ -39,10 +45,15 @@ export class LoginComponent implements OnInit {
     const password = this.passwordLoginForm;
 
     if( user != "admin@gmail.com" || password != "admin"){
-      console.log('Credenciales incorrectas');
+      this.snackBarService.openSnackBar('Credenciales incorrectas!','Error', 
+      ERRORSNACKBAR, 'bottom', 'center');
+      return;
     }
 
-    console.log('success');
+    this.snackBarService.openSnackBar('Credenciales correcta!','Success', 
+      SUCCESSNACKBAR, 'bottom', 'center');
+
+    this.router.navigateByUrl('/pages');
   }
 
   private get userLoginForm() {
