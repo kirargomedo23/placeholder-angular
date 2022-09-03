@@ -1,9 +1,14 @@
-<p>modal-confirmation works!</p>
-<h1 mat-dialog-title>Delete file</h1>
+
+<h2 mat-dialog-title>{{ info.title }}</h2>
+<mat-divider></mat-divider>
+<br>
+
 <div mat-dialog-content>
-  Would you like to delete cat.jpeg?
+  {{ info.subtitle }}
 </div>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Cancelar</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Aceptar</button>
+  <button (click)="getSelection(false)"
+    mat-button mat-dialog-close>Cancelar</button>
+  <button (click)="getSelection(true)"
+    mat-button mat-dialog-close cdkFocusInitial>Aceptar</button>
 </div>

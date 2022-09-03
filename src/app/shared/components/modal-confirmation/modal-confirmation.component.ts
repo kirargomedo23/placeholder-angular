@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DataConfirmationI } from 'src/app/interfaces/dataConfirmation.interface';
 
 
 
@@ -9,10 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalConfirmationComponent implements OnInit {
 
-  constructor() { }
+  info : DataConfirmationI = {
+    title: '',
+    subtitle:''
+  }
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) private data: DataConfirmationI,
+    private readonly dialogRef: MatDialogRef<any>) { 
+    
+  }
 
   ngOnInit(): void {
+    this.info = this.data;
+  }
 
+  getSelection(value: boolean){
+    this.dialogRef.close(value);
   }
 
 }

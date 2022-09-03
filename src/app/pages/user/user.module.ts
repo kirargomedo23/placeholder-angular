@@ -11,6 +11,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import { SnackbarService } from 'src/app/services/snackbar.service';
 import { TitleModule } from 'src/app/shared/components/title/title.module';
 import {MatButtonModule} from '@angular/material/button'; 
+import { ModalConfirmationModule } from 'src/app/shared/components/modal-confirmation/modal-confirmation.module';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,7 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [
     CommonModule, UserRoutingModule,
     MatTableModule, TitleModule, MatMenuModule,
-    MatButtonModule,
+    MatButtonModule, ModalConfirmationModule, MatDialogModule,
     MatSnackBarModule
   ],
   providers: [SnackbarService]
