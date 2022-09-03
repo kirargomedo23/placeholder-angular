@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
     this.snackBarService.openSnackBar('Credenciales correcta!','Success', 
       SUCCESSNACKBAR, 'bottom', 'center');
 
-    this.router.navigateByUrl('/pages');
+    this.router.navigateByUrl('/pages/user');
   }
 
   private get userLoginForm() {
