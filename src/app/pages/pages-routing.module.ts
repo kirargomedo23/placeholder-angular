@@ -9,7 +9,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
+        loadChildren: () => import("./user/user.module").then((m) => m.UserModule)
       },
       {
         path: 'comment',

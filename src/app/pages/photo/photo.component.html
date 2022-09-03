@@ -1,1 +1,16 @@
-<p>photo works!</p>
+
+<app-title [title]="'Listado de Fotos'" ></app-title>
+
+
+<ng-container *ngFor="let lp of listPhotos" >
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{lp.title}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image 
+        [src]="lp.url" alt="Photo of a Shiba Inu">
+    </mat-card>
+</ng-container>
+
+  

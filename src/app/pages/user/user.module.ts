@@ -13,11 +13,15 @@ import { TitleModule } from 'src/app/shared/components/title/title.module';
 import {MatButtonModule} from '@angular/material/button'; 
 import { ModalConfirmationModule } from 'src/app/shared/components/modal-confirmation/modal-confirmation.module';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ModalEditComponent } from './components/modal-edit/modal-edit.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
   declarations: [
-    UserComponent
+    UserComponent,
+    ModalEditComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule, UserRoutingModule,

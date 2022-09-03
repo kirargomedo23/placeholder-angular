@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { TodoRoutingModule } from './todo-routing.module';
 import { TodoComponent } from './todo.component';
+import { SnackbarService } from 'src/app/services/snackbar.service';
+
+
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import { TitleModule } from 'src/app/shared/components/title/title.module';
 
 
 @NgModule({
@@ -10,8 +15,9 @@ import { TodoComponent } from './todo.component';
     TodoComponent
   ],
   imports: [
-    CommonModule,
-    TodoRoutingModule
-  ]
+    CommonModule, TodoRoutingModule, TitleModule,
+    MatSnackBarModule
+  ],
+  providers: [SnackbarService]
 })
 export class TodoModule { }
