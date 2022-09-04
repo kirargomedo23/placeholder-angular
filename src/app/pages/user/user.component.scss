@@ -1,6 +1,6 @@
 
 @import '../../../styles.scss';
 
-.p-x{
-    @include padding-x(3);
+.m-x{
+    @include padding-table(3);
 }

@@ -2,6 +2,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; 
+    width: 100%;
     font-family: Roboto, "Helvetica Neue", sans-serif; 
 }
 
@@ -19,6 +20,6 @@ body { margin: 0;
     margin: 0 1rem;
 }
 
-@mixin padding-x($p) {
-    padding: $p+rem;
+@mixin padding-table($p) {
+    padding: 0 3rem;
 }

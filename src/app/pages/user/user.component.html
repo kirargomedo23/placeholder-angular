@@ -3,9 +3,9 @@
 <app-title [title]="'Listado de Usuario'" ></app-title>
 
 
-
-<table mat-table 
-    [dataSource]="dataSource" class="mat-elevation-z8 width-full p-x">
+<div class="m-x">
+  <table mat-table 
+    [dataSource]="dataSource" class="mat-elevation-z8 width-full ">
   
     <!-- Name Column -->
     <ng-container matColumnDef="name">
@@ -49,8 +49,9 @@
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+  </table>
+</div>
+
   
 
-
-  
+<br><br><br>
